@@ -28,33 +28,33 @@ Please share your catering packages and pure desi ghee menu options.`;
   };
 
   return (
-    <section id="catering" className="py-16 bg-[#FDF9F3] text-[#29180E] relative border-b border-[#EADCC8]">
+    <section id="catering" className="py-12 sm:py-16 bg-[#FDF9F3] text-[#29180E] relative border-b border-[#EADCC8]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center space-x-2 text-xs font-semibold tracking-wider text-[#9A3412] bg-[#FEE2E2]/60 px-3.5 py-1 rounded-full border border-[#FCA5A5]/60 mb-2.5">
-            <ChefHat className="w-3.5 h-3.5 text-[#EA580C]" />
-            <span>स्वादिष्ट खान-पान सेवा • Catering in Ayodhya</span>
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+          <div className="inline-flex items-center space-x-1.5 sm:space-x-2 text-[11px] sm:text-xs font-semibold tracking-wider text-[#9A3412] bg-[#FEE2E2]/60 px-3.5 py-1 rounded-full border border-[#FCA5A5]/60 mb-2.5 max-w-full">
+            <ChefHat className="w-3.5 h-3.5 text-[#EA580C] flex-shrink-0" />
+            <span className="truncate">स्वादिष्ट खान-पान सेवा • Catering in Ayodhya</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#451A03] tracking-normal">
             In-House & Outdoor Catering Services
           </h2>
           <div className="w-12 h-1 bg-[#D97706] mx-auto mt-3 mb-3 rounded-full" />
-          <p className="text-stone-700 text-sm sm:text-base leading-relaxed">
+          <p className="text-stone-700 text-xs sm:text-base leading-relaxed">
             Live food counters, pure desi ghee preparations, traditional Awadhi & North Indian feasts, and Satvik delicacies for weddings, poojas, and celebrations across Ayodhya.
           </p>
         </div>
 
         {/* Catering Service Packages Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 sm:mb-10">
           {CATERING_SERVICES.map((pkg) => (
             <div
               key={pkg.id}
-              className="bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-all border border-[#E8D8C3] flex flex-col justify-between"
+              className="bg-white rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all border border-[#E8D8C3] flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-40 w-full overflow-hidden bg-stone-100">
+                <div className="relative h-40 sm:h-44 w-full overflow-hidden bg-stone-100">
                   <img
                     src={pkg.image}
                     alt={pkg.title}
@@ -72,7 +72,7 @@ Please share your catering packages and pure desi ghee menu options.`;
                   </div>
                 </div>
 
-                <div className="p-4">
+                <div className="p-3.5 sm:p-4">
                   <p className="text-xs text-stone-600 leading-relaxed mb-3">
                     {pkg.description}
                   </p>
@@ -88,12 +88,12 @@ Please share your catering packages and pure desi ghee menu options.`;
                 </div>
               </div>
 
-              <div className="p-3 pt-0">
+              <div className="p-3.5 pt-0">
                 <a
                   href={getWhatsAppLink('catering', `Enquiry for ${pkg.title} Catering in Ayodhya`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2 px-3 rounded bg-[#FFF7ED] hover:bg-[#FFEDD5] text-[#9A3412] text-xs font-semibold flex items-center justify-center space-x-1.5 border border-[#FDBA74] transition-colors"
+                  className="w-full min-h-[40px] py-2 px-3 rounded-xl bg-[#FFF7ED] hover:bg-[#FFEDD5] text-[#9A3412] text-xs font-semibold flex items-center justify-center space-x-1.5 border border-[#FDBA74] transition-colors active:scale-98"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   <span>Enquire for {pkg.occasion}</span>
@@ -104,14 +104,14 @@ Please share your catering packages and pure desi ghee menu options.`;
         </div>
 
         {/* Compact WhatsApp Planner Form */}
-        <div className="bg-[#240E03] text-[#FFFDF9] rounded-xl p-6 sm:p-8 border border-[#D97706]/40 shadow-lg">
+        <div className="bg-[#240E03] text-[#FFFDF9] rounded-2xl p-5 sm:p-7 md:p-8 border border-[#D97706]/40 shadow-lg">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             
             <div className="lg:col-span-5 space-y-2">
-              <span className="text-xs font-semibold text-[#FDE68A] uppercase tracking-wider">
+              <span className="text-[11px] sm:text-xs font-semibold text-[#FDE68A] uppercase tracking-wider">
                 ॥ जय श्री सीताराम ॥
               </span>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#FEF3C7]">
+              <h3 className="font-serif text-lg sm:text-2xl font-bold text-[#FEF3C7]">
                 Book Catering for Your Auspicious Occasion
               </h3>
               <p className="text-xs text-amber-200/80 leading-relaxed">
@@ -124,7 +124,7 @@ Please share your catering packages and pure desi ghee menu options.`;
               </div>
             </div>
 
-            <div className="lg:col-span-7 bg-[#351605] p-4 sm:p-5 rounded-lg border border-amber-900/60">
+            <div className="lg:col-span-7 bg-[#351605] p-4 sm:p-5 rounded-xl border border-amber-900/60">
               <form onSubmit={handleCateringWhatsAppSubmit} className="space-y-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
@@ -134,7 +134,7 @@ Please share your catering packages and pure desi ghee menu options.`;
                     <select
                       value={eventType}
                       onChange={(e) => setEventType(e.target.value)}
-                      className="w-full px-2.5 py-1.5 text-xs bg-[#240E03] border border-amber-900 rounded text-amber-100 focus:outline-none focus:border-[#D97706]"
+                      className="w-full min-h-[42px] px-3 py-2 text-xs sm:text-sm bg-[#240E03] border border-amber-900 rounded-lg text-amber-100 focus:outline-none focus:border-[#D97706]"
                     >
                       <option value="Wedding / Reception">Wedding / Reception</option>
                       <option value="Ring Ceremony / Engagement">Ring Ceremony / Engagement</option>
@@ -151,7 +151,7 @@ Please share your catering packages and pure desi ghee menu options.`;
                     <select
                       value={guestCount}
                       onChange={(e) => setGuestCount(e.target.value)}
-                      className="w-full px-2.5 py-1.5 text-xs bg-[#240E03] border border-amber-900 rounded text-amber-100 focus:outline-none focus:border-[#D97706]"
+                      className="w-full min-h-[42px] px-3 py-2 text-xs sm:text-sm bg-[#240E03] border border-amber-900 rounded-lg text-amber-100 focus:outline-none focus:border-[#D97706]"
                     >
                       <option value="25 - 50 Guests">25 - 50 Guests</option>
                       <option value="50 - 150 Guests">50 - 150 Guests</option>
@@ -169,9 +169,8 @@ Please share your catering packages and pure desi ghee menu options.`;
                       type="date"
                       value={cateringDate}
                       onChange={(e) => setCateringDate(e.target.value)}
-                      className="w-full px-2.5 py-1.5 text-xs bg-[#240E03] border border-amber-900 rounded text-amber-100 focus:outline-none focus:border-[#D97706]"
-                    >
-                    </input>
+                      className="w-full min-h-[42px] px-3 py-2 text-xs sm:text-sm bg-[#240E03] border border-amber-900 rounded-lg text-amber-100 focus:outline-none focus:border-[#D97706]"
+                    />
                   </div>
 
                   <div>
@@ -183,25 +182,26 @@ Please share your catering packages and pure desi ghee menu options.`;
                       value={locationPreference}
                       onChange={(e) => setLocationPreference(e.target.value)}
                       placeholder="e.g. Ayodhya, Faizabad, or Venue"
-                      className="w-full px-2.5 py-1.5 text-xs bg-[#240E03] border border-amber-900 rounded text-amber-100 focus:outline-none focus:border-[#D97706]"
+                      className="w-full min-h-[42px] px-3 py-2 text-xs sm:text-sm bg-[#240E03] border border-amber-900 rounded-lg text-amber-100 focus:outline-none focus:border-[#D97706]"
                     />
                   </div>
                 </div>
 
-                <div className="pt-2 flex flex-col sm:flex-row items-center gap-2">
+                <div className="pt-2 flex flex-col sm:flex-row items-center gap-2.5">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto flex-1 py-2.5 px-4 rounded bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center space-x-1.5 transition-colors cursor-pointer"
+                    className="w-full sm:w-auto flex-1 min-h-[44px] py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center space-x-1.5 transition-colors cursor-pointer active:scale-98 shadow-md"
                   >
-                    <MessageSquare className="w-3.5 h-3.5" />
+                    <MessageSquare className="w-4 h-4" />
                     <span>Get Catering Quote on WhatsApp</span>
                   </button>
 
                   <a
                     href={`tel:${RESTAURANT_INFO.whatsappNumber}`}
-                    className="w-full sm:w-auto px-4 py-2.5 rounded bg-[#451A03] hover:bg-[#5C2304] text-[#FEF3C7] text-xs font-bold text-center border border-amber-800 transition-colors"
+                    className="w-full sm:w-auto min-h-[44px] px-4 py-2.5 rounded-xl bg-[#451A03] hover:bg-[#5C2304] text-[#FEF3C7] text-xs font-bold text-center flex items-center justify-center space-x-1.5 border border-amber-800 transition-colors active:scale-98"
                   >
-                    Call Manager
+                    <Phone className="w-3.5 h-3.5 text-amber-300" />
+                    <span>Call Manager</span>
                   </a>
                 </div>
               </form>

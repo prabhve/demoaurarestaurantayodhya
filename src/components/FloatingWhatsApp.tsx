@@ -93,11 +93,11 @@ export const FloatingWhatsApp: React.FC = () => {
       </div>
 
       {/* Mobile Sticky Bottom Action Bar */}
-      <div id="mobile-sticky-bottom-bar" className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#2A1004]/98 backdrop-blur-md border-t border-[#D97706]/40 px-3 py-2 shadow-2xl flex items-center justify-between gap-2">
+      <div id="mobile-sticky-bottom-bar" className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#2A1004]/98 backdrop-blur-md border-t border-[#D97706]/40 px-3 pt-2 pb-[calc(env(safe-area-inset-bottom,0px)+0.5rem)] shadow-2xl flex items-center justify-between gap-2">
         <a
           id="mobile-sticky-call-btn"
           href={`tel:${RESTAURANT_INFO.whatsappNumber}`}
-          className="flex-1 py-2 rounded-md bg-[#3D1807] text-amber-100 font-semibold text-xs flex items-center justify-center space-x-1 border border-amber-800/60"
+          className="flex-1 min-h-[44px] py-2 rounded-xl bg-[#3D1807] hover:bg-[#4D200A] active:scale-98 text-amber-100 font-semibold text-xs flex items-center justify-center space-x-1.5 border border-amber-800/60 transition-transform"
         >
           <Phone className="w-3.5 h-3.5 text-[#F59E0B]" />
           <span>Call Now</span>
@@ -106,7 +106,7 @@ export const FloatingWhatsApp: React.FC = () => {
         <button
           id="mobile-sticky-menu-btn"
           onClick={scrollToMenu}
-          className="flex-1 py-2 rounded-md bg-[#D97706] text-[#240E03] font-bold text-xs flex items-center justify-center space-x-1"
+          className="flex-1 min-h-[44px] py-2 rounded-xl bg-[#D97706] hover:bg-[#B45309] active:scale-98 text-[#240E03] font-bold text-xs flex items-center justify-center space-x-1.5 transition-transform cursor-pointer"
         >
           <Utensils className="w-3.5 h-3.5" />
           <span>Menu</span>
@@ -117,7 +117,7 @@ export const FloatingWhatsApp: React.FC = () => {
           href={getWhatsAppLink('general')}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 py-2 rounded-md bg-emerald-600 text-white font-bold text-xs flex items-center justify-center space-x-1"
+          className="flex-1 min-h-[44px] py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-98 text-white font-bold text-xs flex items-center justify-center space-x-1.5 transition-transform"
         >
           <MessageSquare className="w-3.5 h-3.5" />
           <span>WhatsApp</span>

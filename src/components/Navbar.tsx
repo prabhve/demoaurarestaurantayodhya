@@ -62,16 +62,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenOrderM
   return (
     <>
       {/* 1. Deep Maroon Top Ribbon matching exact reference */}
-      <div className="bg-[#800000] text-white text-xs sm:text-[13px] py-1.5 px-4 font-sans tracking-wide z-50 relative border-b border-red-950">
+      <div className="bg-[#800000] text-white text-[11px] sm:text-xs md:text-[13px] py-1.5 px-3 sm:px-4 font-sans tracking-wide z-50 relative border-b border-red-950">
         <div className="max-w-7xl mx-auto flex items-center justify-center text-center">
-          <div className="flex items-center justify-center space-x-1 sm:space-x-2 font-medium overflow-x-auto no-scrollbar py-0.5">
-            <span className="text-amber-100 font-semibold">Order Online Now @</span>
-            <a href={`tel:${generalSettings.primaryPhone.replace(/[^0-9+]/g, '')}`} className="text-white hover:underline font-bold">{generalSettings.primaryPhone}</a>
-            <span className="text-red-300">|</span>
-            <a href={`tel:${generalSettings.secondaryPhone.replace(/[^0-9+]/g, '')}`} className="text-white hover:underline font-bold">{generalSettings.secondaryPhone}</a>
-            <span className="text-red-300">-</span>
-            <a href={`tel:${generalSettings.mobilePhone.replace(/[^0-9+]/g, '')}`} className="text-white hover:underline font-bold">{generalSettings.mobilePhone}</a>
-            <span className="text-amber-200 hidden md:inline ml-2">• {generalSettings.freeDeliveryNote}</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-1.5 sm:gap-x-2 gap-y-0.5 font-medium py-0.5">
+            <span className="text-amber-100 font-semibold flex items-center gap-1">
+              <Phone className="w-3 h-3 text-amber-300 inline" />
+              <span>Order Online @</span>
+            </span>
+            <a href={`tel:${generalSettings.primaryPhone.replace(/[^0-9+]/g, '')}`} className="text-white hover:text-amber-200 underline sm:no-underline sm:hover:underline font-bold transition-colors">{generalSettings.primaryPhone}</a>
+            <span className="text-red-300 hidden sm:inline">|</span>
+            <a href={`tel:${generalSettings.secondaryPhone.replace(/[^0-9+]/g, '')}`} className="text-white hover:text-amber-200 underline sm:no-underline sm:hover:underline font-bold transition-colors hidden sm:inline">{generalSettings.secondaryPhone}</a>
+            <span className="text-red-300 hidden md:inline">-</span>
+            <a href={`tel:${generalSettings.mobilePhone.replace(/[^0-9+]/g, '')}`} className="text-white hover:text-amber-200 underline sm:no-underline sm:hover:underline font-bold transition-colors hidden md:inline">{generalSettings.mobilePhone}</a>
+            <span className="text-amber-200 hidden lg:inline ml-2">• {generalSettings.freeDeliveryNote}</span>
           </div>
         </div>
       </div>
@@ -172,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenOrderM
               </button>
             </div>
 
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile Hamburger Toggle & Quick Action */}
             <div className="flex xl:hidden items-center space-x-2">
               <button
                 onClick={() => {
@@ -182,18 +185,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenOrderM
                     window.open(getWhatsAppLink('general', 'I want to place an online order.'), '_blank');
                   }
                 }}
-                className="px-2.5 py-1 rounded bg-[#800000] text-white text-xs font-bold font-serif"
+                className="px-3 py-1.5 rounded-full bg-[#800000] text-white text-xs font-bold font-serif shadow-xs flex items-center space-x-1 cursor-pointer active:scale-95 transition-transform"
               >
-                Order
+                <ShoppingBag className="w-3.5 h-3.5 text-amber-300" />
+                <span>Order</span>
               </button>
 
               <button
                 id="mobile-menu-toggle-btn"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-md text-stone-700 hover:text-stone-900 hover:bg-stone-100"
-                aria-label="Toggle menu"
+                className="min-w-[42px] min-h-[42px] flex items-center justify-center rounded-lg text-stone-800 hover:text-stone-950 hover:bg-stone-100 border border-stone-200 cursor-pointer active:scale-95 transition-transform"
+                aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-6 h-6 text-[#800000]" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
 
@@ -202,17 +206,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenOrderM
 
         {/* Mobile Dropdown Drawer */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-4 space-y-2 animate-fadeIn shadow-lg">
-            <div className="grid grid-cols-2 gap-1.5 pt-1 border-b border-stone-100 pb-3">
+          <div className="xl:hidden bg-white border-b border-stone-200 px-4 pt-3 pb-5 space-y-3 animate-fadeIn shadow-2xl">
+            <div className="grid grid-cols-2 gap-2 pt-1 border-b border-stone-100 pb-3">
               {navItems.map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
                   onClick={(e) => handleNavClick(e, item.id)}
-                  className={`px-3 py-2 text-xs font-medium rounded-md ${
+                  className={`min-h-[44px] px-3.5 py-2.5 text-xs sm:text-sm font-medium rounded-xl flex items-center justify-center text-center transition-all ${
                     activeSection === item.id
-                      ? 'bg-stone-900 text-amber-300 font-bold'
-                      : 'text-stone-700 hover:bg-stone-100'
+                      ? 'bg-stone-900 text-amber-300 font-bold shadow-xs'
+                      : 'text-stone-700 bg-stone-50 hover:bg-stone-100 active:bg-stone-200'
                   }`}
                 >
                   {item.label}
@@ -220,15 +224,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenOrderM
               ))}
             </div>
 
-            <div className="pt-2 grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2.5 pt-1">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   if (onOpenBookingModal) onOpenBookingModal('Table Reservation');
                 }}
-                className="py-2 px-3 rounded-full border border-[#800000] text-[#800000] font-serif font-bold text-xs text-center"
+                className="min-h-[44px] py-2.5 px-3 rounded-xl border-2 border-[#800000] text-[#800000] font-serif font-bold text-xs sm:text-sm text-center flex items-center justify-center space-x-1.5 active:bg-[#FFF5F5] transition-colors cursor-pointer"
               >
-                Reservations
+                <Calendar className="w-4 h-4 text-[#800000]" />
+                <span>Reservations</span>
               </button>
 
               <button
@@ -240,9 +245,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenOrderM
                     window.open(getWhatsAppLink('general', 'I want to place an online order.'), '_blank');
                   }
                 }}
-                className="py-2 px-3 rounded-full bg-[#800000] text-white font-serif font-bold text-xs text-center flex items-center justify-center space-x-1"
+                className="min-h-[44px] py-2.5 px-3 rounded-xl bg-[#800000] active:bg-[#990000] text-white font-serif font-bold text-xs sm:text-sm text-center flex items-center justify-center space-x-1.5 shadow-md cursor-pointer transition-colors"
               >
-                <ShoppingBag className="w-3 h-3 text-amber-300" />
+                <ShoppingBag className="w-4 h-4 text-amber-300" />
                 <span>Order Online</span>
               </button>
             </div>

@@ -33,11 +33,11 @@ Please confirm availability and preparation time.`;
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-xs p-4 animate-fadeIn">
-      <div className="bg-white text-stone-900 max-w-md w-full rounded-2xl overflow-hidden shadow-2xl border border-stone-300 flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-xs p-3 sm:p-4 animate-fadeIn">
+      <div className="bg-white text-stone-900 max-w-md w-full max-h-[92vh] overflow-y-auto rounded-2xl shadow-2xl border border-stone-300 flex flex-col">
         
         {/* Header */}
-        <div className="px-5 py-3.5 bg-[#800000] text-white flex items-center justify-between">
+        <div className="sticky top-0 z-10 px-5 py-3.5 bg-[#800000] text-white flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <ShoppingBag className="w-5 h-5 text-amber-300" />
             <div>
@@ -47,7 +47,7 @@ Please confirm availability and preparation time.`;
           </div>
           <button
             onClick={onClose}
-            className="text-stone-300 hover:text-white p-1 rounded-lg cursor-pointer"
+            className="text-stone-300 hover:text-white p-1.5 rounded-lg cursor-pointer active:scale-95"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
@@ -55,26 +55,26 @@ Please confirm availability and preparation time.`;
         </div>
 
         {/* Direct Call Numbers */}
-        <div className="p-4 bg-red-50 border-b border-red-100">
+        <div className="p-3.5 sm:p-4 bg-red-50 border-b border-red-100">
           <span className="text-xs font-bold text-[#800000] block mb-1.5">
             📞 Direct Order Calling Numbers:
           </span>
           <div className="grid grid-cols-3 gap-1.5 text-center text-xs">
             <a
               href="tel:+916386903300"
-              className="p-1.5 bg-white border border-red-200 rounded font-bold text-[#800000] hover:bg-red-100"
+              className="min-h-[38px] p-2 bg-white border border-red-200 rounded-lg font-bold text-[#800000] hover:bg-red-100 active:scale-95 flex items-center justify-center"
             >
               6386903300
             </a>
             <a
               href="tel:+916386903302"
-              className="p-1.5 bg-white border border-red-200 rounded font-bold text-[#800000] hover:bg-red-100"
+              className="min-h-[38px] p-2 bg-white border border-red-200 rounded-lg font-bold text-[#800000] hover:bg-red-100 active:scale-95 flex items-center justify-center"
             >
               6386903302
             </a>
             <a
               href="tel:+919619657771"
-              className="p-1.5 bg-white border border-red-200 rounded font-bold text-[#800000] hover:bg-red-100"
+              className="min-h-[38px] p-2 bg-white border border-red-200 rounded-lg font-bold text-[#800000] hover:bg-red-100 active:scale-95 flex items-center justify-center"
             >
               9619657771
             </a>
@@ -82,7 +82,7 @@ Please confirm availability and preparation time.`;
         </div>
 
         {/* WhatsApp Order Form */}
-        <form onSubmit={handleWhatsAppOrder} className="p-5 space-y-3">
+        <form onSubmit={handleWhatsAppOrder} className="p-4 sm:p-5 space-y-3">
           <div>
             <label className="block text-xs font-semibold text-stone-700 mb-1">
               What would you like to order?
@@ -107,7 +107,7 @@ Please confirm availability and preparation time.`;
               placeholder="e.g. Hotel / Dharamshala name, House address, Landmark..."
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="w-full px-3 py-2 border border-stone-300 rounded-lg text-xs focus:ring-1 focus:ring-[#800000] focus:outline-none"
+              className="w-full min-h-[40px] px-3 py-2 border border-stone-300 rounded-lg text-xs focus:ring-1 focus:ring-[#800000] focus:outline-none"
             />
           </div>
 
@@ -121,13 +121,13 @@ Please confirm availability and preparation time.`;
               placeholder="e.g. +91 98765 43210"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="w-full px-3 py-2 border border-stone-300 rounded-lg text-xs focus:ring-1 focus:ring-[#800000] focus:outline-none"
+              className="w-full min-h-[40px] px-3 py-2 border border-stone-300 rounded-lg text-xs focus:ring-1 focus:ring-[#800000] focus:outline-none"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center space-x-1.5 transition-colors shadow-sm cursor-pointer mt-2"
+            className="w-full min-h-[44px] py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-98 text-white font-bold text-xs sm:text-sm flex items-center justify-center space-x-1.5 transition-all shadow-sm cursor-pointer mt-2"
           >
             <MessageSquare className="w-4 h-4" />
             <span>Send Order via WhatsApp</span>

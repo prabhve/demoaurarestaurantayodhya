@@ -421,7 +421,7 @@ export const ContactSection: React.FC = () => {
                         href={place.googleMapsDirectionsUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full py-2 px-3 rounded-lg bg-[#800000] hover:bg-[#990000] text-white text-xs font-bold flex items-center justify-center space-x-1.5 transition-all shadow-2xs hover:shadow-xs cursor-pointer"
+                        className="w-full min-h-[42px] py-2 px-3 rounded-xl bg-[#800000] hover:bg-[#990000] active:scale-98 text-white text-xs font-bold flex items-center justify-center space-x-1.5 transition-all shadow-xs cursor-pointer"
                       >
                         <Navigation className="w-3.5 h-3.5 text-amber-300" />
                         <span>Get Directions</span>
@@ -431,13 +431,13 @@ export const ContactSection: React.FC = () => {
                       {/* Secondary: Preview on Embedded Map */}
                       <button
                         onClick={() => handleSelectPlaceForMap(place)}
-                        className={`w-full py-1.5 px-3 rounded-lg text-[11px] font-semibold flex items-center justify-center space-x-1.5 transition-colors cursor-pointer ${
+                        className={`w-full min-h-[38px] py-1.5 px-3 rounded-xl text-[11px] font-semibold flex items-center justify-center space-x-1.5 transition-colors cursor-pointer active:scale-98 ${
                           isSelected
                             ? 'bg-amber-100 text-[#78350F] border border-amber-300'
                             : 'bg-stone-50 hover:bg-stone-100 text-stone-700 border border-stone-200'
                         }`}
                       >
-                        <Map className="w-3 h-3 text-[#D97706]" />
+                        <Map className="w-3.5 h-3.5 text-[#D97706]" />
                         <span>{isSelected ? '✓ Route Active in Map' : 'Preview on Map'}</span>
                       </button>
 
