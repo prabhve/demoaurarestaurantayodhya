@@ -1,0 +1,6 @@
+{
+  "name": "The Aura Restaurant & Banquets Ayodhya",
+  "description": "Official website for The Aura Restaurant in Ayodhya. Pure vegetarian multi-cuisine dining, luxury banquet hall, 5000-capacity outdoor celebration lawn, catering services, and corporate events on Ram Path Road.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
